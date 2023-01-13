@@ -1,19 +1,28 @@
 import "./style.css";
-const URL = "https://www.balldontlie.io/api/v1/players";
-let player = "bensimmons";
-
-
+const URL = "https://www.balldontlie.io/api/v1/players/<ID>";
 
 async function getData(URL) {
-    try {
-        const response = await fetch(URL);
-        if (response.status < 200 || response.status > 299) {
-            console.log(response.status);
-            throw error (response);
-        } else {
-            const data = await response.json();
-            data.data[0].entry.forEach()
-        }
-
+  try {
+    const response = await fetch(URL);
+    if (response.status < 200 || response.status > 299) {
+      console.log(response.status);
+      throw error(response);
+    } else {
+      const data = await response.json();
+      data.first_name.forEach((player) => {
+        document.getElementById("api-reponse").insertAdjecentHTML(
+          "afterbegin",
+          `<div class ="card">
+                <h2 class = "title">${player.first_name + player.last_name}</h2>
+                </div>`
+        );
+      });
+      console.log(data.first_name);
     }
+  } catch (error) {
+    console.log(error);
+    console.log("sad");
+    document.getElementById("api-response").textcontent =
+      "I'm sorry, I couldn't find that. Please try again.";
+  }
 }
