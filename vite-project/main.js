@@ -1,5 +1,5 @@
 import "./style.css";
-const URL = "https://www.balldontlie.io/api/v1/players/<ID>";
+const URL = "https://www.balldontlie.io/api/v1/players";
 
 async function getData(URL) {
   try {
@@ -9,15 +9,15 @@ async function getData(URL) {
       throw error(response);
     } else {
       const data = await response.json();
-      data.first_name.forEach((player) => {
+      data.forEach((player) => {
         document.getElementById("api-reponse").insertAdjecentHTML(
           "afterbegin",
           `<div class ="card">
-                <h2 class = "title">${player.first_name + player.last_name}</h2>
+                <h2 class = "title">${player.first_name}</h2>
                 </div>`
         );
       });
-      console.log(data.first_name);
+      console.log(data.data[0].first_name);
     }
   } catch (error) {
     console.log(error);
@@ -26,3 +26,5 @@ async function getData(URL) {
       "I'm sorry, I couldn't find that. Please try again.";
   }
 }
+
+getData(URL);
