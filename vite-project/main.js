@@ -20,9 +20,8 @@ async function getData(URL) {
       console.log(data.data[0].first_name);
     }
   } catch (error) {
-    console.log(error);
-    console.log("sad");
-    document.getElementById("api-response").textcontent =
+    console.log("error");
+    document.getElementById("api - response").textcontent =
       "I'm sorry, I couldn't find that. Please try again.";
   }
 }
