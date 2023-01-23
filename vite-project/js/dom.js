@@ -1,6 +1,3 @@
-const DOMSelectors = {
-  East: document.getElementById("East"),
-  input: document.getElementById("input"),
-};
+const DOMSelectors = {};
 
 export { DOMSelectors };
