@@ -2,15 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles/style.css"/>
+    <title>API</title>
   </head>
   <body>
-    <div id="app"></div>
-    <title>Ball</title>
-    <input id="input" class="input" type="text">
-    <button class="East" id="East" type="button"></button>
-    <script type="module" src="/main.js"></script>
+  <div class="parent">
+    <h1>Basketball Players</h1>
+    <h3>Please type in the name of the player you want to find below :)</h3>
+
+    <form class="form-inputs">
+      <input type="text" class="textbox" id="player" required>
+    </form>  
+
+    <form class="form-inputs">
+      <input type="submit" value="Submit" class="btn">
+    </form>
+
+    <p id="api-response"></p>
+  </div>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

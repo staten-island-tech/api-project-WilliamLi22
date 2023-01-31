@@ -1,0 +1,104 @@
+html, body,*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.6%;
+}
+
+:root {
+  --black: #000;
+  --light-blue: #529ce2;
+  --dark-blue: #135cc5;
+  --yellow: #FFDF00;
+  --dark-red: #dc2626;
+  --light-gray: #ccd9e1;
+  --primary: var(--light-blue);
+  --secondary: var(--light-gray);
+  --h1: 7.594rem;
+  --h2: 5.063rem;
+  --h3: 3.375rem;
+  --h4: 2.25rem;
+  --h5: 1.5rem;
+}
+
+h1{
+  font-size: var(--h1);
+}
+
+h2{
+  font-size: var(--h2);
+  margin-top: auto;
+}
+
+h3{
+  font-size: var(--h3);
+}
+
+h4{
+  font-size: var(--h4);
+}
+
+h5{
+  font-size: var(--h5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 4em;
+  font-weight: 500;
+  font-family: inherit;
+  border-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.parent {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.textbox {
+  margin: 20px;
+  width: 40%;
+  height: 10%;
+  font-size: 4rem;
+  text-align: center;
+  
+}
+
+.btn {
+  height: 50px;
+  width: 80px;
+  font-size: 2rem;
+  
+}
