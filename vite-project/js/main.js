@@ -30,19 +30,17 @@ async function allplayers() {
   const response = await fetch(URL);
   const Info = await response.json();
   console.log(Info);
-  data
-    .filter((data) => data.includes("team"))
-    .forEach((data) =>
-      document.getElementById("apiresponse").insertAdjacentHTML(
-        "beforeend",
-        `
+  Info.data.forEach((data) =>
+    document.getElementById("apiresponse").insertAdjacentHTML(
+      "beforeend",
+      `
         <div class="card">
-        <h2 class="all">${data.first_name} ${data.last_name}</h2>
-        <h2 class="all">${data.height_feet} ${data.height_inches}</h2>
-        <h2 class="all">${data.weight}</h2>
+        <h2 class="apiresponse">${data.first_name} ${data.last_name}</h2>
+        <h2 class="apiresponse">${data.height_feet} ${data.height_inches}</h2>
+        <h2 class="apiresponse">${data.weight}</h2>
  
   </div>
   `
-      )
-    );
+    )
+  );
 }

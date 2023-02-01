@@ -109,7 +109,12 @@ button:focus-visible {
   text-align: center;
 }
 
-.api-response {
-  margin: 30px;
+.apiresponse {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 100%;
   font-size: 3rem;
+  border: black;
+  border-radius: 1px;
 }
