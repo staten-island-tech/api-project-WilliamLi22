@@ -8,18 +8,28 @@
   </head>
   <body>
   <div class="parent">
-    <h1>Basketball Players</h1>
-    <h3>Please type in the name of the player you want to find below :)</h3>
+    <h1>NBA Players</h1>
+    <!-- <h3>Please type in the name of the player you want to find below :)</h3>
 
     <form class="form-inputs">
-      <input type="text" class="textbox" id="player" required>
+      <input type="text" class="textbox" id="players" required>
     </form>  
 
     <form class="form-inputs">
-      <input type="submit" value="Submit" class="btn">
-    </form>
+      <input type="submit" value="Submit" class="btn" id="submit">
+    </form> -->
 
-    <p id="api-response"></p>
+    <div class="buttons">
+      <input type="button" value="All Players" id="all"/>
+      <input type="button" value="Point Guards" id="pointguards"/>
+      <input type="button" value="Shooting Guards" id="shootingguards"/>
+      <input type="button" value="Small Forwards" id="smallforwards"/>
+      <input type="button" value="Power Forwards" id="powerforwards"/>
+      <input type="button" value="Centers" id="centers"/>
+    </div>
+
+    <div id="apiresponse"></div>
+
   </div>
     <script type="module" src="js/main.js"></script>
   </body>
