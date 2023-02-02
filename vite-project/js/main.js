@@ -1,7 +1,7 @@
 import "../styles/style.css";
 import { DOMSelectors } from "./dom";
 
-const URL = `https://www.balldontlie.io/api/v1/players`;
+const URL = `https://www.balldontlie.io/api/v1/players?per_page=100`;
 
 async function getData(URL) {
   try {
