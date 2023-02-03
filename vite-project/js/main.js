@@ -3,6 +3,8 @@ import { DOMSelectors } from "./dom";
 
 const URL = `https://www.balldontlie.io/api/v1/players?per_page=100`;
 
+//https://www.balldontlie.io/api/v1/players?page=2&per_page=100 use this and continue to do for all pages
+
 async function getData(URL) {
   try {
     const response = await fetch(URL);
