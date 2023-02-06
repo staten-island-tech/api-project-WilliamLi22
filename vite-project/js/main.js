@@ -1,25 +1,6 @@
 import "../styles/style.css";
 import { DOMSelectors } from "./dom";
-
-const URL = `https://www.balldontlie.io/api/v1/players?per_page=100`;
-
-//https://www.balldontlie.io/api/v1/players?page=2&per_page=100 use this and continue to do for all pages
-
-async function getData(URL) {
-  try {
-    const response = await fetch(URL);
-    if (response.status < 200 || response.status > 299) {
-      throw Error(response.status);
-    } else {
-      const data = await response.json(); //makes the data into json object we can use
-      console.log(data);
-      document.getElementById("api-response");
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-getData(URL);
+import { URL } from "../js/api.js";
 
 const apiresponse = document.querySelector(`#apiresponse`);
 
@@ -37,12 +18,101 @@ async function allplayers() {
       "beforeend",
       `
         <div class="card">
-        <h2 class="apiresponse">${data.first_name} ${data.last_name}</h2>
-        <h2 class="apiresponse">${data.height_feet} ${data.height_inches}</h2>
-        <h2 class="apiresponse">${data.weight}</h2>
+        <h2 class="apiresponse">Name: ${data.first_name} ${data.last_name}</h2>
+        <h2 class="apiresponse">Height: ${data.height_feet} Feet ${data.height_inches} Inches</h2>
+        <h2 class="apiresponse">Weight: ${data.weight} Pounds</h2>
  
   </div>
   `
     )
   );
 }
+
+document.getElementById("guards").addEventListener("click", function () {
+  apiresponse.innerHTML = ``;
+  guards();
+});
+
+async function guards() {
+  const response = await fetch(URL);
+  const Info = await response.json();
+  console.log(Info);
+  Info.data
+    .filter((data) => data.position.includes("G"))
+    .forEach((data) =>
+      document.getElementById("apiresponse").insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="card">
+        <h2 class="apiresponse">Name: ${data.first_name} ${data.last_name}</h2>
+        <h2 class="apiresponse">Height: ${data.height_feet} Feet ${data.height_inches} Inches</h2>
+        <h2 class="apiresponse">Weight: ${data.weight} Pounds</h2>
+ 
+  </div>
+  `
+      )
+    );
+}
+
+document.getElementById("forwards").addEventListener("click", function () {
+  apiresponse.innerHTML = ``;
+  forwards();
+});
+
+async function forwards() {
+  const response = await fetch(URL);
+  const Info = await response.json();
+  console.log(Info);
+  Info.data
+    .filter((data) => data.position.includes("F"))
+    .forEach((data) =>
+      document.getElementById("apiresponse").insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="card">
+        <h2 class="apiresponse">Name: ${data.first_name} ${data.last_name}</h2>
+        <h2 class="apiresponse">Height: ${data.height_feet} Feet ${data.height_inches} Inches</h2>
+        <h2 class="apiresponse">Weight: ${data.weight} Pounds</h2>
+ 
+  </div>
+  `
+      )
+    );
+}
+
+document.getElementById("centers").addEventListener("click", function () {
+  apiresponse.innerHTML = ``;
+  centers();
+});
+
+async function centers() {
+  const response = await fetch(URL);
+  const Info = await response.json();
+  console.log(Info);
+  Info.data
+    .filter((data) => data.position.includes("C"))
+    .forEach((data) =>
+      document.getElementById("apiresponse").insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="card">
+        <h2 class="apiresponse">Name: ${data.first_name} ${data.last_name}</h2>
+        <h2 class="apiresponse">Height: ${data.height_feet} Feet ${data.height_inches} Inches</h2>
+        <h2 class="apiresponse">Weight: ${data.weight} Pounds</h2>
+ 
+  </div>
+  `
+      )
+    );
+}
+
+const specificplayer = `https://www.balldontlie.io/api/v1/players/<ID>`;
+let players = DOMSelectors.players.value;
+DOMSelectors.players.value = "";
+
+DOMSelectors.submit.addEventListener("click", function () {
+  let players = DOMSelectors.character.value;
+  DOMSelectors.character.value = "";
+});
+
+/* https://www.balldontlie.io/api/v1/players/<ID> */
