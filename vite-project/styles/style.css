@@ -111,10 +111,19 @@ button:focus-visible {
 
 .apiresponse {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px;
   width: 100%;
   font-size: 3rem;
   border: black;
   border-radius: 1px;
+}
+
+.card {
+  display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 1px;
 }

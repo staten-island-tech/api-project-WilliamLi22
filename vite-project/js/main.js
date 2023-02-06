@@ -106,13 +106,30 @@ async function centers() {
     );
 }
 
-const specificplayer = `https://www.balldontlie.io/api/v1/players/<ID>`;
-let players = DOMSelectors.players.value;
-DOMSelectors.players.value = "";
-
-DOMSelectors.submit.addEventListener("click", function () {
-  let players = DOMSelectors.character.value;
-  DOMSelectors.character.value = "";
+document.getElementById("submit").addEventListener("click", function (e) {
+  e.preventDefault();
 });
 
-/* https://www.balldontlie.io/api/v1/players/<ID> */
+let input = document.input.value;
+
+docmuent.content.innerHTML = "";
+async function specificplayer(URL, input) {
+  const response = await fetch(URL);
+  const Info = await response.json();
+  Info.data
+    .filter((data) => data.first_name && data.last_name.includes(`${Input}`))
+    .forEach((data) => {
+      document.getElementById("apiresponse").insertAdjacentHTML(
+        "beforeend",
+        `
+          <div class="card">
+          <h2 class="apiresponse">Name: ${data.first_name} ${data.last_name}</h2>
+          <h2 class="apiresponse">Height: ${data.height_feet} Feet ${data.height_inches} Inches</h2>
+          <h2 class="apiresponse">Weight: ${data.weight} Pounds</h2>
+   
+    </div>
+    `
+      );
+    });
+  specificplayer(URL, input);
+}

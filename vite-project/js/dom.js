@@ -4,7 +4,7 @@ const DOMSelectors = {
   guards: document.getElementById("guards"),
   forwards: document.getElementById("forwards"),
   centers: document.getElementById("centers"),
-  players: document.querySelector(`#players`),
+  input: document.querySelector(".input"),
   submit: document.getElementById("submit"),
 };
 
