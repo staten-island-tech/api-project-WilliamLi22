@@ -11,13 +11,14 @@
     <h1>NBA Players</h1>
     <h3>Please type in the name of the player you want to find below :)</h3>
 
-    <form class="form-inputs">
+    <form id="form-inputs" class="form-inputs">
       <input type="text" class="textbox" id="input" required>
+      <button type="submit">Submit</button>
     </form>  
 
-    <form class="form-inputs">
+    <!-- <form class="form-inputs">
       <input type="submit" value="Submit" class="btn" id="submit">
-    </form>
+    </form> -->
 
     <div class="buttons">
       <input type="button" value="All Players" id="all"/>
@@ -26,7 +27,7 @@
       <input type="button" value="Centers" id="centers"/>
     </div>
 
-    <div id="apiresponse"></div>
+    <div class="apiresponse" id="apiresponse"></div>
 
   </div>
     <script type="module" src="js/main.js"></script>

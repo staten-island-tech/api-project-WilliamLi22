@@ -113,17 +113,18 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  flex-direction: column;
-  margin: 10px;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   font-size: 3rem;
-  border: black;
-  border-radius: 1px;
 }
 
 .card {
-  display: flex;
+    display: flex;
     flex-direction: column;
     width: 30%;
     border: 1px;
+    margin: 20px;
+    border: 1px black;
+    padding: 5px;
 }

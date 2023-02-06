@@ -106,7 +106,25 @@ async function centers() {
     );
 }
 
-document.getElementById("submit").addEventListener("click", function (e) {
+const form = document.getElementById("form-inputs");
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const playerId = form.elements["form-inputs"].value;
+
+  async function getPlayer(id) {
+    const response = await fetch(
+      `https://www.balldontlie.io/api/v1/players/${id}`
+    );
+    const player = await response.json();
+    return player;
+  }
+
+  const player = await getPlayer(playerId);
+  console.log(player);
+});
+
+/* document.getElementById("submit").addEventListener("click", function (e) {
   e.preventDefault();
 });
 
@@ -133,3 +151,13 @@ async function specificplayer(URL, input) {
     });
   specificplayer(URL, input);
 }
+
+async function getPlayer(id) {
+  const response = await fetch(
+    `https://www.balldontlie.io/api/v1/players/${id}`
+  );
+  const player = await response.json();
+  return player;
+}
+
+getPlayer(1).then((player) => console.log(player)); */
