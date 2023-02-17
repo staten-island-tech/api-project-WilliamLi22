@@ -4,6 +4,23 @@ import { URL } from "../js/api.js";
 
 const apiresponse = document.querySelector(`#apiresponse`);
 
+function startupdata() {
+  URL.forEach((data) => {
+    DOMSelectors.apiresponse.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="card">
+      <h2 class="apiresponse">Name: ${data.first_name} ${data.last_name}</h2>
+      <h2 class="apiresponse">Height: ${data.height_feet} Feet ${data.height_inches} Inches</h2>
+      <h2 class="apiresponse">Weight: ${data.weight} Pounds</h2>
+
+</div>`
+    );
+  });
+}
+
+startupdata();
+
 document.getElementById("all").addEventListener("click", function () {
   apiresponse.innerHTML = ``;
   allplayers();
